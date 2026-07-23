@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggle =
         document.getElementById("theme-toggle");
 
+    const notesButton =
+        document.getElementById("notes-button");
+
 
 
     // LOAD SAVED ACCESSORIES
@@ -327,6 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
+    
 
 
 
@@ -350,6 +354,27 @@ document.addEventListener("DOMContentLoaded", () => {
         mainMenu.classList.add("hidden");
 
         closetMenu.classList.remove("hidden");
+
+    };
+
+    notesButton.onclick = () => {
+
+        message.textContent =
+            "Sorry! Notes are coming soon 📝✨";
+
+
+        speechBubble.textContent =
+            "I can't wait to remember things with you! 🐹💛";
+
+
+        speechBubble.classList.remove("hidden");
+
+
+        setTimeout(() => {
+
+            speechBubble.classList.add("hidden");
+
+        }, 2500);
 
     };
 
