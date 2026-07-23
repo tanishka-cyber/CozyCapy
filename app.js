@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     let friendship =
-        Number(localStorage.getItem("friendship")) || 280;
+        Number(localStorage.getItem("friendship")) || 0;
 
 
     let hunger =
@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const notesButton =
         document.getElementById("notes-button");
+
+    const restartButton =
+        document.getElementById("restart");
 
 
 
@@ -398,6 +401,23 @@ document.addEventListener("DOMContentLoaded", () => {
             speechBubble.classList.add("hidden");
 
         }, 2500);
+
+    };
+
+    restartButton.onclick = () => {
+
+        let confirmReset =
+            confirm("Are you sure you want to restart CozyCapy? All progress will be lost 💛");
+
+
+        if (confirmReset) {
+
+            localStorage.clear();
+
+
+            location.reload();
+
+        }
 
     };
 
