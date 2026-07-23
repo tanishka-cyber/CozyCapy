@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>CozyCapy</title>
+
+    <link rel="stylesheet" href="app.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="app">
+
+
+        <h1>
+            CozyCapy
+        </h1>
+
+
+
+        <div class="room">
+
+
+            <div class="capy" id="capy-container">
+
+
+                <div id="speech-bubble" class="hidden">
+                    You're amazing 💛
+                </div>
+
+
+
+                <img id="capy-image" class="capy-normal" src="images/capybara.jpg" draggable="false">
+
+
+
+                <div id="accessory-layer"></div>
+
+
+            </div>
+
+
+
+
+
+            <h2 id="level-display">
+                Level 1 🌱
+            </h2>
+
+
+
+            <p>
+                Friendship:
+                <span id="friendship">
+                    0
+                </span>
+                ❤️
+            </p>
+
+
+
+            <div id="progress-card">
+
+
+                <h3>
+                    Progress 🌱
+                </h3>
+
+
+                <span id="level-info">
+
+                    20 ❤️ Until Level 2 👒
+
+                </span>
+
+
+                <p>
+
+                    Unlocks:
+                    👒 Straw Hat
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <p>
+
+                Mood:
+
+                <span id="mood">
+
+                    Happy 😊
+
+                </span>
+
+            </p>
+
+
+
+
+
+            <p>
+
+                Hunger:
+
+                <span id="hunger">
+
+                    100
+
+                </span>
+
+                🍓
+
+            </p>
+
+
+
+
+
+            <p id="message">
+
+                Hi! I'm happy you're here.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- MAIN MENU -->
+
+
+        <div class="buttons" id="main-menu">
+
+
+            <button id="pet">
+
+                🖐️ Pet
+
+            </button>
+
+
+
+            <button id="feed">
+
+                🍓 Feed
+
+            </button>
+
+
+
+            <button>
+
+                📝 Notes
+
+            </button>
+
+
+
+            <button id="room-button">
+                🛋️ Room   
+            </button>
+
+
+
+            <button id="closet">
+
+                👒 Closet
+
+            </button>
+
+
+
+            <button id="remove-accessories">
+
+                🧼 Remove Accessories
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- FOOD MENU -->
+
+
+        <div id="food-menu" class="hidden">
+
+
+            <h2>
+                Choose food 🍽️
+            </h2>
+
+
+            <p>
+                Drag food to CozyCapy's mouth!
+            </p>
+
+
+
+            <div class="food-options">
+
+
+
+                <div class="food" draggable="true" data-value="5">
+
+                    <div class="food-icon">
+
+                        🍓
+
+                    </div>
+
+                    <div class="food-name">
+
+                        Strawberry
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="food" draggable="true" data-value="5">
+
+
+                    <div class="food-icon">
+
+                        🥭
+
+                    </div>
+
+
+                    <div class="food-name">
+
+                        Mango
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <div class="food" draggable="true" data-value="10">
+
+
+                    <div class="food-icon">
+
+                        🧋
+
+                    </div>
+
+
+                    <div class="food-name">
+
+                        Boba
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="food" draggable="true" data-value="25" data-favorite="true">
+
+
+                    <div class="food-icon">
+
+                        <img src="images/food/chole-bhature.png">
+
+                    </div>
+
+
+                    <div class="food-name">
+
+                        Chole Bhature ⭐
+
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+            <button id="back-button">
+
+                ← Back
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- CLOSET MENU -->
+
+
+        <div id="closet-menu" class="hidden">
+
+
+            <h2>
+
+                Cozy Closet 👒
+
+            </h2>
+
+
+
+            <p>
+
+                Earn Friendship ❤️ to unlock accessories!
+
+            </p>
+
+
+
+
+
+            <div class="unlock-guide">
+
+
+                <p>
+
+                    🌱 Level 2 — 20 ❤️ → Straw Hat 👒
+
+                </p>
+
+
+
+                <p>
+
+                    🌱 Level 3 — 50 ❤️ → Cozy Scarf 🧣
+
+                </p>
+
+
+
+                <p>
+
+                    🌱 Level 4 — 100 ❤️ → Glasses 🕶️
+
+                </p>
+
+
+
+                <p>
+
+                    🌱 Level 5 — 250 ❤️ → Blue Cap 🧢
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="closet-items">
+
+
+
+
+
+                <div class="closet-item locked" data-required="20" data-accessory="hat">
+
+
+                    <div class="accessory-icon">
+
+                        👒
+
+                    </div>
+
+
+                    <div class="accessory-name">
+
+                        Straw Hat
+
+                    </div>
+
+
+                    <div class="unlock">
+
+                        🔒 20 ❤️
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="closet-item locked" data-required="50" data-accessory="scarf">
+
+
+                    <div class="accessory-icon">
+
+                        🧣
+
+                    </div>
+
+
+                    <div class="accessory-name">
+
+                        Cozy Scarf
+
+                    </div>
+
+
+                    <div class="unlock">
+
+                        🔒 50 ❤️
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="closet-item locked" data-required="100" data-accessory="glasses">
+
+
+                    <div class="accessory-icon">
+
+                        🕶️
+
+                    </div>
+
+
+                    <div class="accessory-name">
+
+                        Glasses
+
+                    </div>
+
+
+                    <div class="unlock">
+
+                        🔒 100 ❤️
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="closet-item locked" data-required="250" data-accessory="cap">
+
+
+                    <div class="accessory-icon">
+
+                        🧢
+
+                    </div>
+
+
+                    <div class="accessory-name">
+
+                        Blue Cap
+
+                    </div>
+
+
+                    <div class="unlock">
+
+                        🔒 250 ❤️
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+            <button id="closet-back">
+
+                ← Back
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>

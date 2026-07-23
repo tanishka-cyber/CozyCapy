@@ -1,0 +1,759 @@
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #f8e8cf;
+
+    font-family: "Quicksand", sans-serif;
+
+    color: #5c3b25;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+}
+
+
+.app {
+
+    width: 700px;
+
+    min-height: 850px;
+
+    height: auto;
+
+    margin: 30px auto;
+
+    background: #fff7e8;
+
+    border-radius: 35px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+
+}
+
+
+h1 {
+
+    font-size: 42px;
+    margin-bottom: 20px;
+
+}
+
+
+h2 {
+
+    font-size: 30px;
+
+}
+
+
+p {
+
+    font-size: 20px;
+
+}
+
+
+/* =========================
+   ROOM
+========================= */
+
+
+.room {
+
+    background: #fdf0db;
+
+    border-radius: 30px;
+
+    padding: 25px;
+
+}
+
+
+
+.capy {
+
+    height: 350px;
+    width: 350px;
+
+    margin: auto;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+#capy-image {
+
+    width: 350px;
+    height: 350px;
+
+    object-fit: contain;
+
+    position: absolute;
+
+}
+
+/* =========================
+   DAY NIGHT SYSTEM
+========================= */
+
+
+/* =========================
+   DAY NIGHT SYSTEM
+========================= */
+
+
+.app.morning {
+
+    background: #fff7e8;
+
+}
+
+
+
+.app.evening {
+
+    background: #ffe4bb;
+
+}
+
+
+
+.app.night {
+
+    background: #242944;
+
+    color: #fff4df;
+
+}
+
+
+
+.app.night .room {
+
+    background: #30385d;
+
+}
+
+
+
+.app.night h1,
+.app.night h2,
+.app.night h3,
+.app.night p,
+.app.night span {
+
+    color: #fff4df;
+
+}
+
+
+
+.app.night #progress-card {
+
+    background: #39436b;
+
+}
+
+
+
+.app.night button {
+
+    background: #d9b47a;
+
+    color: #3d2b1f;
+
+}
+
+/* =========================
+ ACCESSORIES
+========================= */
+
+
+#accessory-layer {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 350px;
+    height: 350px;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+}
+
+
+
+.accessory-image {
+
+    position: absolute;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+}
+
+
+
+.wearing-hat {
+
+    width: 120px;
+
+    top: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+
+.wearing-cap {
+
+    width: 125px;
+
+    top: 58px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+
+.wearing-glasses {
+
+    width: 85px;
+
+    top: 96px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+
+.wearing-scarf {
+
+    width: 150px;
+
+    top: 149px;
+
+    left: 48%;
+
+    transform: translateX(-50%);
+
+}
+
+
+
+/* =========================
+ ANIMATIONS
+========================= */
+
+
+.capy-normal {
+
+    animation: breathe 3s infinite ease-in-out;
+
+}
+
+
+
+@keyframes breathe {
+
+    50% {
+
+        transform: scale(1.05);
+
+    }
+
+}
+
+
+
+.capy-happy {
+
+    animation: bounce .5s;
+
+}
+
+
+
+.eating {
+
+    animation: eat .6s;
+
+}
+
+
+
+@keyframes bounce {
+
+    50% {
+
+        transform: translateY(-35px);
+
+    }
+
+}
+
+
+
+@keyframes eat {
+
+    50% {
+
+        transform: scale(1.15) rotate(5deg);
+
+    }
+
+}
+
+
+
+/* =========================
+ SPEECH
+========================= */
+
+
+#speech-bubble {
+
+    position: absolute;
+
+    top: -25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 25px;
+
+    font-size: 18px;
+
+    max-width: 220px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+
+    z-index: 30;
+
+}
+
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+/* =========================
+ PROGRESS
+========================= */
+
+
+#progress-card {
+
+    background: #fdf0db;
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    margin: 20px auto;
+
+    width: 300px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+
+}
+
+
+
+#level-info {
+
+    font-size: 18px;
+
+}
+
+
+
+/* =========================
+ BUTTONS
+========================= */
+
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 140px);
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+}
+
+
+
+button {
+
+    width: 140px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #f3c892;
+
+    color: #5c3b25;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+
+button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+/* =========================
+ FOOD
+========================= */
+
+
+.food-options {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin: 30px;
+
+}
+
+
+
+.food {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    cursor: grab;
+
+    user-select: none;
+
+}
+
+
+
+.food:active {
+
+    cursor: grabbing;
+
+}
+
+
+
+.food-icon {
+    font-size: 55px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.food-icon img {
+
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+}
+
+
+
+.food-name {
+
+    font-size: 15px;
+
+    margin-top: 8px;
+
+}
+
+
+
+/* =========================
+ CLOSET
+========================= */
+
+
+#closet-menu {
+
+    margin-top: 20px;
+
+}
+
+
+
+.unlock-guide {
+
+    background: #fff1d6;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    font-size: 16px;
+
+}
+
+
+
+.closet-items {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 150px);
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 35px;
+
+}
+
+
+
+.closet-item {
+
+    width: 150px;
+
+    height: 170px;
+
+    background: #fdf0db;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+
+    transition: .3s;
+
+}
+
+
+
+.closet-item:hover {
+
+    transform: translateY(-8px) scale(1.05);
+
+}
+
+
+
+.accessory-icon {
+
+    font-size: 55px;
+
+}
+
+
+
+.accessory-name {
+
+    font-size: 17px;
+
+    margin-top: 10px;
+
+}
+
+
+
+.unlock {
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+}
+
+
+
+.locked {
+
+    opacity: .65;
+
+}
+
+
+
+.unlocked {
+
+    background: #ffe7a8;
+
+    border: 3px solid #d9a66c;
+
+}
+
+
+
+/* =========================
+ DRAG
+========================= */
+
+
+.food,
+.closet-item {
+
+    -webkit-user-drag: element;
+
+}
+
+
+
+body.dragging {
+
+    cursor: grabbing;
+
+}
+
+
+
+/* =========================
+ MOBILE
+========================= */
+
+
+@media(max-width:750px) {
+
+
+    .app {
+
+        width: 90%;
+
+        padding: 20px;
+
+    }
+
+
+
+    .buttons {
+
+        grid-template-columns: repeat(2, 140px);
+
+    }
+
+
+
+    .closet-items {
+
+        grid-template-columns: repeat(2, 150px);
+
+    }
+
+
+}
+
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+/* WHOLE PAGE DAY NIGHT */
+
+
+body.morning {
+
+    background: #f8e8cf;
+
+}
+
+
+
+body.evening {
+
+    background: #e7b98a;
+
+}
+
+
+
+body.night {
+
+    background: #151a33;
+
+}

@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "CozyCapy",
+    "version": "1.0",
+    "description": "A tiny cozy capybara companion.",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {}
+}
