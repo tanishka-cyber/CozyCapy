@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const roomButton =
         document.getElementById("room-button");
+    const themeToggle =
+        document.getElementById("theme-toggle");
 
 
 
@@ -108,8 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".app");
 
 
-        let hour =
-            new Date().getHours();
+        let hour = 
+        new Date().getHours();
 
 
 
@@ -150,6 +152,33 @@ document.addEventListener("DOMContentLoaded", () => {
             app.classList.add("night");
 
         }
+
+    }
+
+    function setNightMode() {
+
+        const body =
+            document.body;
+
+        const app =
+            document.querySelector(".app");
+
+
+        body.classList.remove(
+            "morning",
+            "evening"
+        );
+
+        app.classList.remove(
+            "morning",
+            "evening"
+        );
+
+
+        body.classList.add("night");
+
+        app.classList.add("night");
+
 
     }
 
@@ -354,6 +383,42 @@ document.addEventListener("DOMContentLoaded", () => {
         foodMenu.classList.add("hidden");
 
         mainMenu.classList.remove("hidden");
+
+    };
+
+    themeToggle.onclick = () => {
+
+
+        if (document.body.classList.contains("night")) {
+
+
+            document.body.classList.remove("night");
+
+            document.querySelector(".app")
+                .classList.remove("night");
+
+
+            themeToggle.textContent =
+                "🌙 Night Mode";
+
+
+            updateDayNight();
+
+
+        }
+
+        else {
+
+
+            setNightMode();
+
+
+            themeToggle.textContent =
+                "☀️ Day Mode";
+
+
+        }
+
 
     };
 
